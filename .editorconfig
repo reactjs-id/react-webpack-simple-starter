@@ -1,0 +1,26 @@
+root = true
+
+[*]
+end_of_line = lf
+charset = utf-8
+trim_trailing_whitespace = true
+insert_final_newline = true
+
+# Spaces in js, jsx, and json
+[*.{coffee,js,jsx,json}]
+indent_style = space
+indent_size = 2
+
+# Tabs in styles
+[*.{less,css,scss}]
+indent_style = space
+indent_size = 2
+
+# Spaces in HTML
+[*.html]
+indent_style = space
+indent_size = 2
+
+[.eslintrc]
+indent_style = space
+indent_size = 2
