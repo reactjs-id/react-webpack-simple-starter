@@ -1,8 +1,9 @@
 /*eslint-disable */
-require('babel-core/register');
+require('babel-register');
 var path = require('path');
 var webpack = require('webpack');
-var webpackConfig = require('./webpack.config.babel');
+var webpackConfig = require(path.join(__dirname, 'webpack.config.babel')).default;
+/*eslint-enable */
 
 module.exports = function(config) {
   config.set({
@@ -36,11 +37,16 @@ module.exports = function(config) {
       devtool: 'eval',
       resolve: webpackConfig.resolve,
       module: webpackConfig.module,
-      plugins: webpackConfig.plugins
+      plugins: [
+        new webpack.IgnorePlugin(/ReactContext/)
+      ]
     },
     webpackMiddleware: {
-      noInfo: true
+      noInfo: true,
+      watchOptions: {
+        poll: true
+      }
     },
-    reporters: [ 'mocha' ],
-  })
-}
+    reporters: [ 'mocha' ]
+  });
+};

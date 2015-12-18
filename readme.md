@@ -14,23 +14,59 @@ Starter ini sangat sederhana dan hanya mencakup library berikut :
 
 Clone repository ini. lalu jalankan
 
-	npm install
+```sh
+npm install
+```
 
-Setelah itu silakan mulai modifikasi file `src/index.js`.
+untuk membuat komponen baru, buat folder di `src/components` sesuai dengan nama component yang ingin dibuat. lihat contoh component `hello`.
+
+untuk bisa melihat hasilnya, modifikasi file `src/index.js` dengan meng-import komponen yang baru dibuat.
 
 Untuk memulai aplikasi dengan mode development (webpack-dev-server) jalankan perintah berikut
 
-	npm run dev
+```sh
+npm start
+```
 
 lalu buka `http://localhost:8080/`
 
-Untuk build aplikasi yang menghasilkan static file jalankan perintah berikut
+# Testing
 
-	npm run build
+untuk melakukan testing, silakan buat file dengan ekstensi `.spec.js` didalam folder komponen yang baru dibuat. silakan lihat contoh yang ada pada komponen `Hello`.
 
-Untuk deploy production jalankan perintah berikut
+untuk melakukan **continuous testing**, jalankan perintah berikut
 
-	npm run deploy
+```sh
+npm run tdd
+```
+
+sedangkan untuk melakukan testing pada sistem CI (Continuous Integration) seperti wercker/travisCI, jalankan perintah berikut
+
+```sh
+npm test
+```
+
+# Deployment
+
+Untuk build aplikasi untuk deployment, jalankan perintah berikut
+
+```sh
+npm run build
+```
+
+hasil kompilasi aplikasi akan ada di folder `dist`.
+
+# Lain lain
+
+## Testing on Commit
+setiap anda melakukan `git commit` pada projek ini, secara otomatis komputer akan menjalankan command `npm test`. untuk melewati langkah ini, cukup gunakan perintah `git commit --no-verify`.
+
+## Windows Development
+apabila anda melakukan development menggunakan OS Windows dan virtualbox (seperti vagrant/laravel homestead), maka tambahkan `env` HOST=0.0.0.0 sebelum menjalankan command `npm start`.
+
+```sh
+$ HOST=0.0.0.0 npm start
+```
 
 # Lisensi
 
