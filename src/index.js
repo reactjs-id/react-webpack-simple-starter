@@ -1,17 +1,12 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { render } from 'react-dom';
 
-class App extends Component {
-    render() {
-        return (
-            <div>
-                <h1>Halo Dunia!</h1>
-                <p>Selamat belajar ReactJS</p>
-            </div>
-        );
-    }
-};
+import Hello from 'components/hello';
 
-const app = document.createElement('div');
-document.body.appendChild(app); 
-render(<App />, app);
+const appContainer = document.getElementById('app');
+
+render(<Hello />, appContainer);
+
+if (DEBUG) {
+  window.React = React;
+}

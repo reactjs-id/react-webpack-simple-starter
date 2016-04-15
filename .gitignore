@@ -1,6 +1,8 @@
-node_modules/
-build/
-npm-debug.log
+node_modules
+build
+dist
+tmp
+npm-debug.log*
 .DS_Store
 .idea
 dist
