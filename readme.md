@@ -9,6 +9,7 @@ Starter ini sangat sederhana dan hanya mencakup library berikut :
 	- Babel preset react
 	- Babel preset ES2015
 - Webpack
+- CSS Loader
 
 # Penggunaan
 
